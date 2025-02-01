@@ -1,16 +1,27 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import js from "@eslint/js";
+import ts from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
+import next from "eslint-plugin-next";
+import prettier from "eslint-config-prettier";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+export default [
+  js.configs.recommended, // Standard JS rules
+  ts.configs.recommended, // TypeScript rules
+  next.configs.recommended, // Next.js specific rules
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: tsParser, // Use TypeScript parser
+    },
+  },
+  prettier, // Disable ESLint rules that conflict with Prettier
+  {
+    rules: {
+      "no-console": "warn", // Warns for console logs
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "prettier/prettier": "error", // Enforce Prettier formatting
+    },
+  },
 ];
-
-export default eslintConfig;
