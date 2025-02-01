@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { hoverAnimation, tapAnimation } from "../theme/Button";
+import { hoverAnimation, tapAnimation } from "../../theme/Button";
 
 type ButtonProps = {
   title: string;

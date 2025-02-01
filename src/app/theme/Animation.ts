@@ -10,4 +10,16 @@ export const headingAnimation = {
       ease: 'linear',
     },
   };
+
+export const slideInAnimation = {
+  initial: { x: '-100%' },
+  animate: { x: 0 },
+};
+
+export const slideInTransition = {
+  type: 'spring',
+  stiffness: 100,
+  damping: 25,
+};
+
   

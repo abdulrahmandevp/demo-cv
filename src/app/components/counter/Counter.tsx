@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useReducer} from "react";
-import { Button } from "../components/Button";
+import React, { useReducer } from "react";
+import { Button } from "../elements/Button";
 import { useRouter } from "next/navigation";
-import { reducer } from "../lib/reducer/Reducer";
-import { initialState } from "../lib/reducer/State";
-import { increase, decrease} from "../lib/reducer/Actions";
-import { showSuccess, showError } from "../utils/constants/Toast";
-import { Messages } from "../utils/constants/Messages";
+import { reducer } from "../../lib/reducer/Reducer";
+import { initialState } from "../../lib/reducer/State";
+import { increase, decrease } from "../../lib/reducer/Actions";
+import { showSuccess, showError } from "../../utils/constants/Toast";
+import { Messages } from "../../utils/constants/Messages";
 import { ToastContainer } from "react-toastify";
 
 export function Counter() {

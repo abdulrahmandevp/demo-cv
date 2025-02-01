@@ -1,10 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { Button } from '../app/components/Button';
+import { Button } from '../app/components/elements/Button';
 import { motion } from 'framer-motion';
 import { HEADINGS } from './utils/constants/Headings';
-import { Counter } from './counter/Counter';
+import { Counter } from './components/counter/Counter';
 import { headingAnimation, headingTransition } from "./theme/Animation";
 
 
