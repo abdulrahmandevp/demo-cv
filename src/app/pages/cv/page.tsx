@@ -1,6 +1,6 @@
 'use client';
 
-import { HEADINGS } from '../../constants/headings';
+import { HEADINGS } from '../../constants/Headings';
 import { CONTENT } from '@/app/constants/Content';
 
 export default function CV() {

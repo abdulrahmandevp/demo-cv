@@ -1,9 +1,8 @@
-"use client"; // Needed in Next.js App Router
+"use client";
 
 import { motion } from "framer-motion";
 
 type ButtonProps = {
-//  children: React.ReactNode;
   title: string;
   onClick: () => void;
 };
