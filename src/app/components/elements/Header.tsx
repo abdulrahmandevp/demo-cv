@@ -2,8 +2,9 @@
 
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { HEADINGS } from '../constants/headings';
-
+import { HEADINGS } from '../../utils/constants/Headings';
+import { slideInAnimation, slideInTransition } from "../../theme/Animation";
+import Link from 'next/link';
 
 export function Navbar() {
     const router = useRouter();
@@ -12,10 +13,10 @@ export function Navbar() {
         <header className="w-full py-4 fixed top-0 left-0 z-50 bg-white/20 backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <motion.div
-                    className="text-white font-extrabold text-3xl"
-                    initial={{ x: '-100%' }}
-                    animate={{ x: 0 }}
-                    transition={{ type: 'spring', stiffness: 100, damping: 25 }}
+                    className="text-white font-extrabold text-2xl"
+                    initial={slideInAnimation.initial}
+                    animate={slideInAnimation.animate}
+                    transition={slideInTransition}
                 >
                     {HEADINGS.name}
 
@@ -23,20 +24,14 @@ export function Navbar() {
                 <nav>
                     <ul className="flex space-x-6">
                         <li>
-                            <button
-                                className="text-white hover:text-gray-300"
-                                onClick={() => router.push('/')}
-                            >
+                            <Link href="/" className="text-white hover:text-gray-300">
                                 <u>Home</u>
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                className="text-white hover:text-gray-300"
-                                onClick={() => router.push('/pages/cv')}
-                            >
+                            <Link href="/pages/cv" className="text-white hover:text-gray-300">
                                 <u>CV</u>
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
