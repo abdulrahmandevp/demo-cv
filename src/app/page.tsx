@@ -5,6 +5,7 @@ import { Button } from '../app/components/Button';
 import { motion } from 'framer-motion';
 import { HEADINGS } from './utils/constants/Headings';
 import { Counter } from './counter/Counter';
+import { headingAnimation, headingTransition } from "./theme/Animation";
 
 
 export default function Home() {
@@ -16,17 +17,11 @@ export default function Home() {
         <div className="overflow-hidden relative w-full">
           <motion.h1
             className="text-4xl font-extrabold text-gray-900 mb-4 whitespace-nowrap"
-            animate={{ x: ['100%', '-100%'] }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: 'loop',
-                duration: 10,
-                ease: 'linear',
-              },
-            }}
+            animate={headingAnimation}
+            transition={headingTransition}
           >
             {HEADINGS.name}
+
           </motion.h1>
         </div>
         <p className="text-xl mb-6"><u>{HEADINGS.about}</u></p>

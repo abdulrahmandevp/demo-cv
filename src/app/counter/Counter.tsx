@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer} from "react";
 import { Button } from "../components/Button";
 import { useRouter } from "next/navigation";
 import { reducer } from "../lib/reducer/Reducer";
 import { initialState } from "../lib/reducer/State";
-import { increase, decrease, reset } from "../lib/reducer/Actions";
+import { increase, decrease} from "../lib/reducer/Actions";
 import { showSuccess, showError } from "../utils/constants/Toast";
+import { Messages } from "../utils/constants/Messages";
 import { ToastContainer } from "react-toastify";
 
 export function Counter() {
@@ -15,12 +16,12 @@ export function Counter() {
 
   const handleNavigate = () => {
     if (state.userNumber === state.targetNumber) {
-      showSuccess("Success! Redirecting to your CV...");
+      showSuccess(Messages.success.redirecting);
       setTimeout(() => {
         router.push("/pages/cv");
       }, 2000);
     } else {
-      showError("Ooops... Number Mismatched, Try again!");
+      showError(Messages.error.mismatch);
     }
   };
 

@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { HEADINGS } from '../utils/constants/Headings';
+import Link from 'next/link';
 
 
 export function Navbar() {
@@ -23,20 +24,14 @@ export function Navbar() {
                 <nav>
                     <ul className="flex space-x-6">
                         <li>
-                            <button
-                                className="text-white hover:text-gray-300"
-                                onClick={() => router.push('/')}
-                            >
+                            <Link href="/" className="text-white hover:text-gray-300">
                                 <u>Home</u>
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                className="text-white hover:text-gray-300"
-                                onClick={() => router.push('/pages/cv')}
-                            >
+                            <Link href="/pages/cv" className="text-white hover:text-gray-300">
                                 <u>CV</u>
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
