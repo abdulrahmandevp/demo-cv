@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { HEADINGS } from '../constants/Headings';
+import { HEADINGS } from '../utils/constants/Headings';
 
 
 export function Navbar() {

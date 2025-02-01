@@ -6,20 +6,21 @@ import { useRouter } from "next/navigation";
 import { reducer } from "../lib/reducer/Reducer";
 import { initialState } from "../lib/reducer/State";
 import { increase, decrease, reset } from "../lib/reducer/Actions";
+import { showSuccess, showError } from "../utils/constants/Toast";
+import { ToastContainer } from "react-toastify";
 
 export function Counter() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   dispatch(reset());
-  // }, []);
-
   const handleNavigate = () => {
     if (state.userNumber === state.targetNumber) {
-      router.push("/pages/cv");
+      showSuccess("Success! Redirecting to your CV...");
+      setTimeout(() => {
+        router.push("/pages/cv");
+      }, 2000);
     } else {
-      alert("Ooops... Number Mismatched, Try again!");
+      showError("Ooops... Number Mismatched, Try again!");
     }
   };
 
@@ -33,6 +34,7 @@ export function Counter() {
         <Button onClick={() => dispatch(increase())} title="+" />
       </div>
       <Button onClick={handleNavigate} title="View My CV" />
+      <ToastContainer />
     </div>
   );
 }

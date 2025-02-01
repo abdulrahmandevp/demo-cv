@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { Button } from '../app/components/Button';
 import { motion } from 'framer-motion';
-import { HEADINGS } from './constants/Headings';
+import { HEADINGS } from './utils/constants/Headings';
 import { Counter } from './counter/Counter';
 
 

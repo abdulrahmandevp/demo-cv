@@ -1,7 +1,7 @@
 'use client';
 
-import { HEADINGS } from '../../constants/Headings';
-import { CONTENT } from '@/app/constants/Content';
+import { HEADINGS } from '../../utils/constants/Headings';
+import { CONTENT } from '@/app/utils/constants/Content';
 
 export default function CV() {
   const sections = [

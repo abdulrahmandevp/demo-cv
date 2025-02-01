@@ -1,6 +1,6 @@
 'use client';
 
-import { HEADINGS } from '../../constants/Headings';
+import { HEADINGS } from '../../utils/constants/Headings';
 import { Navbar } from '../../components/Header';
 
 export default function CV() {
