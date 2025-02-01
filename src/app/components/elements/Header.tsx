@@ -13,7 +13,7 @@ export function Navbar() {
         <header className="w-full py-4 fixed top-0 left-0 z-50 bg-white/20 backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 <motion.div
-                    className="text-white font-extrabold text-3xl"
+                    className="text-white font-extrabold text-2xl"
                     initial={slideInAnimation.initial}
                     animate={slideInAnimation.animate}
                     transition={slideInTransition}

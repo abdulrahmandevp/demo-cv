@@ -1,7 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { Button } from '../app/components/elements/Button';
 import { motion } from 'framer-motion';
 import { HEADINGS } from './utils/constants/Headings';
 import { Counter } from './components/counter/Counter';
@@ -9,7 +7,6 @@ import { headingAnimation, headingTransition } from "./theme/Animation";
 
 
 export default function Home() {
-  const router = useRouter();
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-teal-500">
@@ -25,7 +22,6 @@ export default function Home() {
           </motion.h1>
         </div>
         <p className="text-xl mb-6"><u>{HEADINGS.about}</u></p>
-        {/* <Button onClick={() => router.push('/pages/cv')}>View My CV</Button> */}
         <Counter />
       </div>
     </div>

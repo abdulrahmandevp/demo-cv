@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 export const showSuccess = (message: string) => {
   toast.success(message, {
     position: "top-right",
-    autoClose: 3000, // Auto close in 3 seconds
+    autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,

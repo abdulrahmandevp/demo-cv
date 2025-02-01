@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import { Button } from "../elements/Button";
 import { useRouter } from "next/navigation";
 import { reducer } from "../../lib/reducer/Reducer";
 import { initialState } from "../../lib/reducer/State";
-import { increase, decrease } from "../../lib/reducer/Actions";
+import { increase, decrease, reset } from "../../lib/reducer/Actions";
 import { showSuccess, showError } from "../../utils/constants/Toast";
 import { Messages } from "../../utils/constants/Messages";
 import { ToastContainer } from "react-toastify";
@@ -13,13 +13,21 @@ import { ToastContainer } from "react-toastify";
 export function Counter() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const router = useRouter();
+  useEffect(() => {
+    if (state.targetNumber === 0) {
+      dispatch(reset(Math.floor(Math.random() * 10)));
+    }
+  }, [state.targetNumber]);
+  
+
+  const redirectToCV = () => {
+    showSuccess(Messages.success.redirecting);
+    setTimeout(() => router.push("/pages/cv"), 2000);
+  };
 
   const handleNavigate = () => {
     if (state.userNumber === state.targetNumber) {
-      showSuccess(Messages.success.redirecting);
-      setTimeout(() => {
-        router.push("/pages/cv");
-      }, 2000);
+      redirectToCV();
     } else {
       showError(Messages.error.mismatch);
     }
@@ -36,6 +44,6 @@ export function Counter() {
       </div>
       <Button onClick={handleNavigate} title="View My CV" />
       <ToastContainer />
-    </div>
+    </div>//
   );
 }

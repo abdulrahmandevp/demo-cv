@@ -8,7 +8,7 @@ export type State = {
 export type Action = 
   | { type: "increase" } 
   | { type: "decrease" } 
-  | { type: "reset" };
+  | { type: "reset"; targetNumber: number };
 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -17,7 +17,7 @@ export function reducer(state: State, action: Action): State {
     case "decrease":
       return { ...state, userNumber: state.userNumber - 1 };
     case "reset":
-      return { userNumber: 0, targetNumber: Math.floor(Math.random() * 10) };
+      return { ...state, userNumber: 0, targetNumber: action.targetNumber };
     default:
       return state;
   }
