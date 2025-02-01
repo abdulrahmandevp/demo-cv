@@ -12,6 +12,7 @@ export default function CV() {
   ];
 
   return (
+    // Further I can make the layout of below divs to eliminate the number of classes because its recomended to use 3 or for max.
     <div className="w-full bg-gradient-to-r from-blue-500 to-teal-500 flex items-center justify-center py-16">
       <div className="max-w-3xl mx-auto p-8 bg-white bg-opacity-90 rounded-lg shadow-lg">
         <h1 className="text-4xl font-extrabold text-gray-900 mb-6 text-center">{HEADINGS.name}</h1>
