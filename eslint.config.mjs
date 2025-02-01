@@ -5,23 +5,23 @@ import next from "eslint-plugin-next";
 import prettier from "eslint-config-prettier";
 
 export default [
-  js.configs.recommended, // Standard JS rules
-  ts.configs.recommended, // TypeScript rules
-  next.configs.recommended, // Next.js specific rules
+  js.configs.recommended,
+  ts.configs.recommended,
+  next.configs.recommended,
   {
     files: ["**/*.ts", "**/*.tsx"],
     languageOptions: {
-      parser: tsParser, // Use TypeScript parser
+      parser: tsParser,
     },
   },
-  prettier, // Disable ESLint rules that conflict with Prettier
+  prettier,
   {
     rules: {
-      "no-console": "warn", // Warns for console logs
+      "no-console": "warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
-      "prettier/prettier": "error", // Enforce Prettier formatting
+      "prettier/prettier": "error",
     },
   },
 ];
