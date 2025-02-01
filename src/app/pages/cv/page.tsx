@@ -3,13 +3,13 @@
 import { HEADINGS } from '../../utils/constants/Headings';
 import { CONTENT } from '@/app/utils/constants/Content';
 
+const sections = [
+  { heading: HEADINGS.about, content: CONTENT.summary },
+  { heading: HEADINGS.experience, content: CONTENT.experience },
+  { heading: HEADINGS.education, content: CONTENT.education },
+  { heading: HEADINGS.skills, content: `${CONTENT.skills}, ${CONTENT.additional}` },
+];
 export default function CV() {
-  const sections = [
-    { heading: HEADINGS.about, content: CONTENT.summary },
-    { heading: HEADINGS.experience, content: CONTENT.experience },
-    { heading: HEADINGS.education, content: CONTENT.education },
-    { heading: HEADINGS.skills, content: `${CONTENT.skills}, ${CONTENT.additional}` },
-  ];
 
   return (
     // Further I can make the layout of below divs to eliminate the number of classes because its recomended to use 3 or for max.
